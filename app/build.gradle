@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        // 这里添加
+        multiDexEnabled true
+        applicationId "com.example.playerxui"
+        minSdkVersion 17
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation files('libs/QWeather_Public_Android_V4.2.jar')
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation fileTree(dir: "libs",include:['*.jar'])
+    implementation files('libs/QWeather_Public_Android_V4.2.jar')
+    //androidx项目
+    implementation 'com.github.xuexiangjys:XUI:1.1.5'
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    // Java
+    def nav_version = "2.1.0-rc01"
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation 'com.google.code.gson:gson:2.6.2'
+
+    /*引用litePal开源库*/
+    implementation 'org.litepal.guolindev:core:3.2.2'
+
+    // 引入support支持库的multidex库
+    implementation 'com.android.support:multidex:1.0.3'
+    //或androidx支持库的multidex库
+    implementation 'androidx.multidex:multidex:2.0.1'
+}

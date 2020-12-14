@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">轻Music</string>
+
+    <string name="Username">请输入用户名</string>
+    <string name="Password">请输入密码</string>
+    <string name="go">登录</string>
+    <string name="forgot_your_password">忘记密码？</string>
+    <string name="login">登录</string>
+</resources>
